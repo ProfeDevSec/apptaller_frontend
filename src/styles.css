@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.small {
+    font-size: 80%;
+}
+
+.m-auto {
+    margin: auto;
+}
+
+.my-auto {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.bg-modal {
+    background:rgba(0,0,0,0.5);
+}
+.sticky {
+    position: sticky;
+    top: 0;
+}

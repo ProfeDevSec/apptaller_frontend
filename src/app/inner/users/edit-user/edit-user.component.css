@@ -1,0 +1,18 @@
+.warning {
+    position: relative;
+}
+.warning input {
+    border: 2px solid red;
+}
+.icon {
+    display: none;
+}
+.warning .icon {
+    position: absolute;
+    right: 9px;
+    bottom: 3px;
+    font-size: 1.5rem;
+    color: red;
+    font-weight: bold;
+    display: block;
+}

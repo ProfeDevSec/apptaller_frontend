@@ -1,0 +1,74 @@
+<div class="flex flex-col bg-[#124001] h-dvh">
+    <div class="flex flex-col justify-center items-center" style="margin:auto;">
+        <div class="flex mb-10 justify-center items-center">
+            <img src="/assets/img/logo.png" width="200" alt="logo">
+        </div>
+        <h1 class="text-white text-2xl">Plataforma de Gestión</h1>
+        @if (error() !== '') {
+        <div class="flex flex-col bg-red-200 rounded-lg items-center" style="width: -webkit-fill-available;">
+            <div class="p-1 mt-3 font-normal flex">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-[30px]">
+            <path fill="#ee1717" d="M504 256c0 137-111 248-248 248S8 393 8 256C8 119.1 119 8 256 8s248 111.1 248 248zm-248 50c-25.4 0-46 20.6-46 46s20.6 46 46 46 46-20.6 46-46-20.6-46-46-46zm-43.7-165.3l7.4 136c.3 6.4 5.6 11.3 12 11.3h48.5c6.4 0 11.6-5 12-11.3l7.4-136c.4-6.9-5.1-12.7-12-12.7h-63.4c-6.9 0-12.4 5.8-12 12.7z"/>
+            </svg>
+            Error:  {{ error() }}
+            </div>
+        </div>
+        }
+        @if (success() !== '') {
+        <div class="flex flex-col bg-green-200 rounded-lg items-center mt-5" style="width: -webkit-fill-available;">
+            <div class="flex p-3 font-normal">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"  class="w-[30px]">
+                    <path fill="#0d6d05" d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227.3 387.3l184-184c6.2-6.2 6.2-16.4 0-22.6l-22.6-22.6c-6.2-6.2-16.4-6.2-22.6 0L216 308.1l-70.1-70.1c-6.2-6.2-16.4-6.2-22.6 0l-22.6 22.6c-6.2 6.2-6.2 16.4 0 22.6l104 104c6.2 6.2 16.4 6.2 22.6 0z"/>
+                </svg>
+                <span class="my-auto ml-2">
+                    Nueva contraseña enviada
+                </span>
+            </div>
+        </div>
+        }
+        <div class="flex flex-col mt-4">
+            <form [formGroup]="forma" (ngSubmit)="reset()">
+                <label class="text-white mt-5">Ingrese el email de usuario</label>
+                <div class="mt-5">
+
+                    <svg class="fill-white w-6 -mb-10 ml-3" focusable="false" aria-hidden="true" viewBox="0 0 24 24"
+                        data-testid="AccountCircleOutlinedIcon">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM7.35 18.5C8.66 17.56 10.26 17 12 17s3.34.56 4.65 1.5c-1.31.94-2.91 1.5-4.65 1.5s-3.34-.56-4.65-1.5zm10.79-1.38C16.45 15.8 14.32 15 12 15s-4.45.8-6.14 2.12C4.7 15.73 4 13.95 4 12c0-4.42 3.58-8 8-8s8 3.58 8 8c0 1.95-.7 3.73-1.86 5.12z">
+                        </path>
+                        <path
+                            d="M12 6c-1.93 0-3.5 1.57-3.5 3.5S10.07 13 12 13s3.5-1.57 3.5-3.5S13.93 6 12 6zm0 5c-.83 0-1.5-.67-1.5-1.5S11.17 8 12 8s1.5.67 1.5 1.5S12.83 11 12 11z">
+                        </path>
+                    </svg>
+                    <input type="text"
+                        class="p-3 pl-12 bg-[#3d45a8] bg-opacity-0 border border-gray-500 rounded-md text-white"
+                        formControlName="email" placeholder="user@gmail.com">
+                </div>
+
+                @if( forma.invalid ){
+                    <button [disabled]="forma.invalid"
+                        class="flex mx-auto text-white uppercase mt-10 border py-3 px-5 rounded-md bg-[#7c7c8a]"
+                        type="submit">
+                        Ingrese un email válido
+                    </button>
+                }@else {
+                    <button
+                        class="flex mx-auto text-white uppercase mt-10 border py-3 px-5 rounded-md bg-[#8A88EA] hover:bg-[#6563bb]"
+                        type="submit">
+                        Enviar contraseña
+                    </button>
+                }
+            </form>
+        </div>
+        <div class="text-white text-center mt-5">
+            <p class="small">Para obtener ayuda escríbenos a</p>
+            <p class="small">soporte&#64;apptaller.com</p>
+        </div>
+    </div>
+</div>
+<footer class="fixed bottom-0 w-full" style="bottom:0;">
+    <div class="small text-white text-center p-2">
+        Copyrights ©2024 - team taller
+    </div>
+</footer>
+

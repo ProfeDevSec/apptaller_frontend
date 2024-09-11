@@ -1,0 +1,54 @@
+<div class="flex justify-between mb-5 mt-5">
+    <h1 class="text-2xl font-bold my-auto">Agregar Usuario</h1>
+</div>
+<hr />
+<div class="flex flex-col px-3 py-2 mt-5">
+    <form [formGroup]="forma" (ngSubmit)="create()">
+        <div class="flex flex-row gap-3">
+            <div class="flex flex-col w-full">
+                <label class="text-gray-500 font-bold text-xl mb-1">Email</label>
+                <input type="email" class="w-full rounded-lg border p-2" formControlName="email" placeholder="Ej. user@dominio.com">
+                <span class="icon">!</span>
+                @if( forma.controls['email'].invalid && forma.controls['email'].errors ){
+                    <small class="text-red-500" [hidden]="forma.controls['email'].errors['required'] || forma.controls['email'].pristine">El email es requerido...</small>
+                    <small class="text-red-500" [hidden]="forma.controls['email'].errors['email'] || forma.controls['email'].pristine">El campo debe ser un email..</small>
+                }
+            </div>
+            <div class="flex flex-col w-full">
+                <label class="text-gray-500 font-bold text-xl mb-1">Nombres</label>
+                <input type="text" class="w-full rounded-lg border p-2" formControlName="nombres"  placeholder="Ingrese nombre">
+                <span class="icon">!</span>
+                @if( forma.controls['nombres'].invalid && forma.controls['nombres'].errors ){
+
+                    <small class="text-red-500" [hidden]="!forma.controls['nombres'].errors['required'] || forma.controls['nombres'].pristine">El nombre es requerido...</small>
+                }
+            </div>
+        </div>
+        <div class="flex flex-row gap-3 mt-4">
+            <div class="flex flex-col w-full">
+                <label class="text-gray-500 font-bold text-xl mb-1">Apellido Paterno</label>
+                <input type="text" class="w-full rounded-lg border p-2" formControlName="apellido_paterno"  placeholder="Ingrese Apellido Paterno">
+                <span class="icon">!</span>
+                @if( forma.controls['apellido_paterno'].invalid && forma.controls['apellido_paterno'].errors ){
+                    <small class="text-red-500" [hidden]="!forma.controls['apellido_paterno'].errors['required'] || forma.controls['apellido_paterno'].pristine">El apellido paterno es requerido...</small>
+                }
+            </div>
+            <div class="flex flex-col w-full">
+
+            </div>
+        </div>
+        <div class="flex flex-row gap-3 mt-4">
+            <div class="flex flex-col w-full">
+              <button type="button" (click)="back()" class="rounded-lg border px-3 py-2 w-[150px] bg-[#124001] hover:bg-[#2fa902] text-white">Volver</button>
+            </div>
+            <div class="flex flex-col w-full">
+                <div class="flex justify-end">
+                    <button type="submit" [disabled]="forma.invalid"
+                        class="rounded-lg border px-3 py-2 ml-2 w-[150px] bg-[#124001] text-white hover:bg-[#2fa902]">
+                        Agregar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,9 @@
+li{
+    margin-bottom: .3rem;
+    padding-left: .2rem;
+}
+
+.active{
+    color: white;
+    background-color: rgb(142,180,212);
+}

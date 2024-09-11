@@ -1,0 +1,68 @@
+<main class="flex">
+    <!-- Sidebar -->
+    @if( open ){
+
+    <aside class="w-[250px] bg-[#124001]" style="position: fixed;height: 100vh;">
+        <div class="flex flex-col justify-center pt-5 pb-0">
+            <img class="m-auto py-3" width="200" src="/assets/img/logo.png">
+            <h4 class="text-white text-center font-bold">App Taller Desarrollo Seguro</h4>
+            <div class="ml-2 mr-2">
+                <hr class="mt-3 mb-3">
+                <p class="text-white text-center">
+                    <small>@if (user()) { {{user().email}} }</small>
+                </p>
+                <p class="text-white text-center">
+                    <small>@if (user()) { {{user().nombre}}  {{user().apellido}} }</small>
+                </p>
+                <hr class="mt-3 mb-3">
+            </div>
+        </div>
+        <div class="h-svh bg-gray-200 pt-5 pl-3 pr-3 pb-5">
+            <h2 class="uppercase font-bold">Menu</h2>
+
+            <ul class="mt-5">
+                <li class="hover:bg-[rgb(142,180,212)] justify-content flex pb-2 rounded-r-lg" routerLink="/dashboard" routerLinkActive="active" role="button">
+                    <a class="flex flex-row mt-3">
+                        <svg class="fill-[#124001] w-[25px]" focusable="false" aria-hidden="true"
+                            viewBox="0 0 24 24" data-testid="DashboardIcon">
+                            <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path>
+                        </svg>
+                        <h2 class="ml-3 hover:text-white">Dashboard</h2>
+                    </a>
+                </li>
+                <li class="hover:bg-[rgb(142,180,212)] justify-content flex pb-2 rounded-r-lg" routerLink="/users"
+                    routerLinkActive="active" role="button">
+                    <a class="flex flex-row mt-3">
+                        <svg class="fill-[#124001] w-[25px]" focusable="false" aria-hidden="true"
+                            viewBox="0 0 24 24" data-testid="PeopleAltIcon">
+                            <path fill-rule="evenodd"
+                                d="M16.67 13.13C18.04 14.06 19 15.32 19 17v3h4v-3c0-2.18-3.57-3.47-6.33-3.87z"></path>
+                            <circle cx="9" cy="8" r="4" fill-rule="evenodd"></circle>
+                            <path fill-rule="evenodd"
+                                d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4c-.47 0-.91.1-1.33.24C14.5 5.27 15 6.58 15 8s-.5 2.73-1.33 3.76c.42.14.86.24 1.33.24zm-6 1c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z">
+                            </path>
+                        </svg>
+                        <h2 class="ml-3 hover:text-white">Usuarios</h2>
+                    </a>
+                </li>
+                <li class="hover:bg-[rgb(142,180,212)] justify-content flex pb-2 rounded-r-lg" routerLink="/logout"
+                    routerLinkActive="active">
+                    <button class="flex flex-row mt-3" (click)="logout()">
+                        <svg class="fill-[#124001] w-[25px]" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="LogoutIcon"><path d="m17 7-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"></path></svg>
+                        <h2 class="ml-3 hover:text-white">Cerrar Sesión</h2>
+                    </button>
+                </li>
+                <li>
+                    <div style="text-align: center;color: gray;margin-top: 1em;">v 1.0.0</div>
+                </li>
+            </ul>
+        </div>
+
+    </aside>
+
+    }
+
+    <div class="p-5" style="width: calc(100% - 250px); margin-left:250px; padding-top:0;">
+        <router-outlet />
+    </div>
+</main>

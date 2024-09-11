@@ -1,0 +1,61 @@
+.hight-full {
+    height: calc(100vh - 200px);
+}
+
+.container .col-1 {
+  width: 33%;
+}
+.container .col-2 {
+  width: 67%;
+}
+.table-height {
+  height: 265px;
+}
+.capitalize {
+  text-transform: capitalize;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #26237F;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #26237F;
+}
+
+.scrollbar-a::-webkit-scrollbar-thumb {
+  background: #1AAB40;
+}
+.scrollbar-a::-webkit-scrollbar-thumb:hover {
+  background: #1AAB40;
+}
+
+.scrollbar-b::-webkit-scrollbar-thumb {
+  background: #AB401A;
+}
+.scrollbar-b::-webkit-scrollbar-thumb:hover {
+  background: #AB401A;
+}
+
+.scrollbar-c::-webkit-scrollbar-thumb {
+  background: #401AAB;
+}
+.scrollbar-c::-webkit-scrollbar-thumb:hover {
+  background: #401AAB;
+}
+
+.container {
+  max-width: none;
+}

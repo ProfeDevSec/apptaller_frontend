@@ -1,0 +1,8 @@
+#table {
+    height: calc(100vh - 110px);
+}
+
+table thead {
+    position: sticky;
+    top: 0;
+}
