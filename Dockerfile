@@ -10,7 +10,7 @@ RUN npm run build --prod
 
 # Etapa 2: Servir la aplicación con Nginx
 
-FROM nginx:1.25.1-alpine
+FROM nginx:1.27.2-alpine
 
 COPY --from=build /app/dist/browser /usr/share/nginx/html
 
