@@ -1,6 +1,6 @@
 # Etapa 1: Construir la aplicación Angular
 
-FROM node:20-alpine AS build
+FROM node:23-alpine AS build
 
 WORKDIR /app
 COPY . .
